@@ -1,0 +1,74 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Debug",
+      "System": "Information",
+      "Microsoft": "Information"
+    },
+    "Console": {
+      "IncludeScopes": false,
+      "LogLevel": {
+        "Default": "Debug",
+        "System": "Information",
+        "Microsoft": "Information"
+      }
+    }
+  },
+  "SystemLog": {
+    "MinimumLevel": {
+      "Default": "Debug",
+      "Override": {
+        "System": "Information",
+        "Microsoft": "Information"
+      }
+    },
+    "WriteTo": [
+      {
+        "Name": "LiterateConsole"
+      },
+      {
+        "Name": "Elasticsearch",
+        "Args": {
+          "nodeUris": "http://localhost:9200",
+          "indexFormat": "logstash-application-recomendapp-{0:yyyy.MM.dd}",
+          "templateName": "recomendapp-template",
+          "typeName": "SystemLogEvent",
+          "batchPostingLimit": 50,
+          "period": 5,
+          "bufferBaseFilename": "C:/Temp/LogDigipolis/recomendapp-buffer-system",
+          "bufferLogShippingInterval": 5000,
+          "restrictedToMinimumLevel": "Information",
+          "connectionGlobalHeaders": ""
+        }
+      }
+    ],
+    "Enrich": [ "FromLogContext" ]
+  },
+  "ApplicationLog": {
+    "MinimumLevel": {
+      "Default": "Debug",
+      "Override": {
+        "System": "Information",
+        "Microsoft": "Information"
+      }
+    },
+    "WriteTo": [
+      {
+        "Name": "Elasticsearch",
+        "Args": {
+          "nodeUris": "http://localhost:9200",
+          "indexFormat": "logstash-application-recomendapp-{0:yyyy.MM.dd}",
+          "templateName": "recomendapp-template",
+          "typeName": "AppLogEvent",
+          "batchPostingLimit": 50,
+          "period": 5,
+          "bufferBaseFilename": "C:/Temp/LogDigipolis/recomendapp-buffer-application",
+          "bufferLogShippingInterval": 5000,
+          "restrictedToMinimumLevel": "Information",
+          "connectionGlobalHeaders": ""
+        }
+      }
+    ],
+    "Enrich": [ "FromLogContext" ]
+  }
+}
