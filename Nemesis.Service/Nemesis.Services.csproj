@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extras.DynamicProxy" Version="4.5.0" />
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="Castle.Core" Version="4.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Nemesis.DAL\Nemesis.DAL.csproj" />
+    <ProjectReference Include="..\Nemesis.Integration\Nemesis.Integration.csproj" />
+    <ProjectReference Include="..\Nemesis.IServices\Nemesis.IServices.csproj" />
+    <ProjectReference Include="..\Nemesis.Utils\Nemesis.Utils.csproj" />
+    <ProjectReference Include="..\Transactions\Transactions.csproj" />
+  </ItemGroup>
+
+</Project>

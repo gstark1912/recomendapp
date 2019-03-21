@@ -1,0 +1,8 @@
+﻿{
+  "Integration": {
+    "CAS": "https://tebas.hexacta.com/",
+    "HRS": "https://hrs.hexacta.com/hrs-intranet/services/employees",
+    "Staffing": "https://staffing.hexacta.com/hrs/employees/all",
+    "PhotoUrl" : "https://fotos.hexacta.com:7443/photo.php"
+  }
+}

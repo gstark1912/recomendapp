@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="5.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Nemesis.DAL\Nemesis.DAL.csproj" />
+    <ProjectReference Include="..\Nemesis.Dtos\Nemesis.Dtos.csproj" />
+    <ProjectReference Include="..\Nemesis.Integration\Nemesis.Integration.csproj" />
+    <ProjectReference Include="..\Nemesis.IServices\Nemesis.IServices.csproj" />
+  </ItemGroup>
+
+</Project>

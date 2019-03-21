@@ -1,8 +1,0 @@
-{
-  "AppSettings": {
-    "AppName": "Recomendapp",
-    "ApplicationId": "enter-your-application-id-here (get it from APPCONFIG)",
-    "DataDirectory": "/data/",
-    "TempDirectory": "/temp/"
-  }
-}
