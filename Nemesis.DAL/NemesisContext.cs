@@ -15,19 +15,30 @@ namespace Nemesis.DAL
             : base(options)
         { }
 
-        public DbSet<Initiative> Initiatives { get; set; }
-        public DbSet<Task> Tasks { get; set; }
-       
+        public DbSet<Division> Division { get; set; }
+        public DbSet<Genre> Genre { get; set; }
+        public DbSet<Instance> Instance { get; set; }
+        public DbSet<Match> Match { get; set; }
+        public DbSet<Movie> Movie { get; set; }
+        public DbSet<Player> Player { get; set; }
+        public DbSet<PlayerInstance> PlayerInstance { get; set; }
+        public DbSet<Review> Review { get; set; }
+        public DbSet<Tournament> Tournament { get; set; }
 
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<PlayerInstance>()
+                .HasKey(pi => new { pi.PlayerId, pi.InstanceId });
 
-            modelBuilder.Entity<Task>()
-                .HasOne(tc => tc.Initiative)
-                .WithMany(tc => tc.Tasks)
-                .HasForeignKey(tc => tc.InitiativeId);
-  
+            builder.Entity<PlayerInstance>()
+                .HasOne(pi => pi.Player)
+                .WithMany(b => b.PlayerInstances)
+                .HasForeignKey(pi => pi.PlayerId);
+
+            builder.Entity<PlayerInstance>()
+                .HasOne(pi => pi.Instance)
+                .WithMany(c => c.PlayerInstances)
+                .HasForeignKey(pi => pi.InstanceId);            
         }
 
         public virtual void Commit()
