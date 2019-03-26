@@ -14,26 +14,26 @@ namespace Nemesis.DAL
 
 
 
-            if (!context.Initiatives.Any())
-            {
-                var initiatives = new Initiative[]
-                {
-                new Initiative{  Name = "Marketing", ShortName = "MKT" },
-                new Initiative{  Name = "HAT", ShortName = "HAT" },
-                new Initiative{  Name = "Aplicaciones internas", ShortName = "AP" },
-                new Initiative{  Name = "Capacitación", ShortName = "CAP" },
-                new Initiative{  Name = "Proyectos Solidarios", ShortName = "PS" },
-                new Initiative{  Name = "Green Team", ShortName = "GT" },
-                new Initiative{  Name = "Recursos Humanos", ShortName = "RH" },
-                new Initiative{  Name = "Software Engineering Process Group", ShortName = "SEPG" }
-                };
+            //if (!context.Initiatives.Any())
+            //{
+            //    var initiatives = new Initiative[]
+            //    {
+            //    new Initiative{  Name = "Marketing", ShortName = "MKT" },
+            //    new Initiative{  Name = "HAT", ShortName = "HAT" },
+            //    new Initiative{  Name = "Aplicaciones internas", ShortName = "AP" },
+            //    new Initiative{  Name = "Capacitación", ShortName = "CAP" },
+            //    new Initiative{  Name = "Proyectos Solidarios", ShortName = "PS" },
+            //    new Initiative{  Name = "Green Team", ShortName = "GT" },
+            //    new Initiative{  Name = "Recursos Humanos", ShortName = "RH" },
+            //    new Initiative{  Name = "Software Engineering Process Group", ShortName = "SEPG" }
+            //    };
 
-                foreach (Initiative i in initiatives)
-                {
-                    context.Initiatives.Add(i);
-                }
-                context.SaveChanges();
-            }
+            //    foreach (Initiative i in initiatives)
+            //    {
+            //        context.Initiatives.Add(i);
+            //    }
+            //    context.SaveChanges();
+            //}
 
 
         }

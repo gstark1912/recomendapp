@@ -185,6 +185,7 @@ namespace Nemesis
         {
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>();
             builder.RegisterType<InitiativeRepository>().As<IInitiativeRepository>();
+            builder.RegisterType<MovieRepository>().As<IMovieRepository>();
             builder.RegisterType<TaskRepository>().As<ITaskRepository>();
            
             builder.RegisterType<HRSEmployeeRepository>().As<IHRSEmployeeRepository>().EnableInterfaceInterceptors();
@@ -195,7 +196,8 @@ namespace Nemesis
         {
             builder.RegisterType<InitiativeService>().As<IInitiativeService>().EnableInterfaceInterceptors();
             builder.RegisterType<TaskService>().As<ITaskService>().EnableInterfaceInterceptors();
-            
+            builder.RegisterType<MovieService>().As<IMovieService>().EnableInterfaceInterceptors();
+
 
             builder.Populate(services);
         }

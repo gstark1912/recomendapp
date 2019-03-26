@@ -27,6 +27,10 @@ namespace Nemesis.DAL
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<Movie>()
+                .ToTable("Movies")
+                .HasKey(pi => new { pi.MovieId });
+
             builder.Entity<PlayerInstance>()
                 .HasKey(pi => new { pi.PlayerId, pi.InstanceId });
 
